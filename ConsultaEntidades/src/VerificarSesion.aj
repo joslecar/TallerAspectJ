@@ -1,11 +1,11 @@
 public aspect VerificarSesion {	
     // Definir el pointcut, es decir, el punto donde ocurrirá la llamada al inicio de sesión.
-    pointcut nombrePointcut(): call(* método ()); 
+    pointcut verificarSesion(): call(* método ()); 
   //Advices. Se ejecutarán en el lugar indicado por el pointcut.
-    before() : nombrePointcut() {
+    before() : verificarSesion() {
         // MétodoInicioSesión
     } 
-    after() : nombrePointcut()  {
+    after() : verificarSesion()  {
         //Ya se inició sesión. (Puede imprimir un mensaje)
     }  
 }
