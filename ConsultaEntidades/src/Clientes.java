@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 
 public class Clientes extends Entidad{
 	private String[] listclient={"Juan Perez","Manuel Castillo","Luisa Mera","Andrea Paez"};
-
+	public JFrame ventanacliente;
 	public Clientes() {
 		
 	}
@@ -54,7 +54,8 @@ public class Clientes extends Entidad{
 	public void consultar(String cliente) {
 		System.out.println("Consultando");
 		JLabel msj = new JLabel("Has consultado "+cliente);
-		// TODO: Utilizar el Frame mensaje para mostrar el msj		
+		ventanacliente.getContentPane().add(msj);	
 	}
+	
 
 }
