@@ -1,11 +1,15 @@
 public aspect VerificarSesion {	
-    // Definir el pointcut, es decir, el punto donde ocurrirá la llamada al inicio de sesión.
-    pointcut verificarSesion(): call(* método ()); 
-  //Advices. Se ejecutarán en el lugar indicado por el pointcut.
+
+    pointcut verificarSesion(): call(void Entidad.initialize()); 
     before() : verificarSesion() {
-        // MétodoInicioSesión
+    	if(!IniciarSesion.sesionIniciada) { 		
+			IniciarSesion.initialize();
+			//Entidad.mensaje.setVisible(false);
+		}
     } 
     after() : verificarSesion()  {
-        //Ya se inició sesión. (Puede imprimir un mensaje)
+        if(IniciarSesion.sesionIniciada) {
+        	System.out.println("Sesion Iniciada!");	
+        }
     }  
 }
