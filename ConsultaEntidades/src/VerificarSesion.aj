@@ -4,7 +4,7 @@ public aspect VerificarSesion {
     before() : verificarSesion() {
     	if(!IniciarSesion.sesionIniciada) { 		
 			IniciarSesion.initialize();
-			//Entidad.mensaje.setVisible(false);
+			Entidad.mensaje.setVisible(false);
 		}
     } 
     after() : verificarSesion()  {
